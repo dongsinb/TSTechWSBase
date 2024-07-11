@@ -22,20 +22,29 @@ function showSection(sectionId) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('http://localhost:3001/data')
-        .then(response => response.json())
-        .then(data => {
-            const tableBody = document.getElementById('data-table');
-            data.forEach(item => {
-                const row = document.createElement('tr');
-                const name = document.createElement('td');
-                name.textContent = item.name;
-                const email = document.createElement('td');
-                email.textContent = item.email;
-                row.appendChild(name);
-                row.appendChild(email);
-                tableBody.appendChild(row);
-            });
-        })
-        .catch(error => console.error('Error fetching data:', error));
+    const fetchData = () => {
+        fetch('http://localhost:3001/data')
+            .then(response => response.json())
+            .then(data => {
+                const tableBody = document.getElementById('data-table');
+                tableBody.innerHTML = ''; // Clear existing table data
+                data.forEach(item => {
+                    const row = document.createElement('tr');
+                    const name = document.createElement('td');
+                    name.textContent = item.name;
+                    const email = document.createElement('td');
+                    email.textContent = item.email;
+                    row.appendChild(name);
+                    row.appendChild(email);
+                    tableBody.appendChild(row);
+                });
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    };
+
+    // Fetch data when the page loads
+    fetchData();
+
+    // Add event listener to the refresh button
+    document.getElementById('refresh-button').addEventListener('click', fetchData);
 });

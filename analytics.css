@@ -21,6 +21,22 @@
     margin-bottom: 20px;
 }
 
+#analytics-section #refresh-button {
+    display: block;
+    margin: 10px auto 20px auto;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#analytics-section #refresh-button:hover {
+    background-color: #45a049;
+}
+
 #analytics-section table {
     width: 100%;
     border-collapse: collapse;
