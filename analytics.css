@@ -1,0 +1,39 @@
+#analytics-section {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    height: 100vh;
+    margin: 0;
+}
+
+#analytics-section .container {
+    width: 80%;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+#analytics-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#analytics-section table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#analytics-section th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#analytics-section th {
+    background-color: #4CAF50;
+    color: white;
+}

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TS VISION</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="user.css" />
+    <link rel="stylesheet" href="analytics.css" />
+    <!-- Boxicons CDN Link -->
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="nav">
+        <div class="logo-details">
+            <img src="tstech.ico" alt="TSVISION Logo" class="company-logo">
+            <h2 class="company-name">TSVISION</h2>
+        </div>
+        <ul class="nav-list">
+            <li class="nav-item">Đăng kí</li>
+            <li class="nav-item">Đăng nhập</li>
+        </ul>
+    </div>
+    <!-- Content -->
+    <div class="main-display">
+        <!-- SideBar -->
+        <div class="sidebar">
+            <ul class="side-list">
+                <li id="dashboard">
+                  <a href="#">
+                    <i class="bx bx-grid-alt"></i>
+                    <span class="links_name"></span>
+                  </a>
+                  <span class="tooltip">Dashboard</span>
+                </li>
+                <li id="user">
+                  <a href="#">
+                    <i class="bx bx-user"></i>
+                    <span class="links_name"></span>
+                  </a>
+                  <span class="tooltip">User</span>
+                </li>
+                <li id="analytics">
+                  <a href="#">
+                    <i class="bx bx-pie-chart-alt-2"></i>
+                    <span class="links_name"></span>
+                  </a>
+                  <span class="tooltip">Analytics</span>
+                </li>
+                <li class="profile">
+                  <div class="profile-details">
+                    <div class="user-name">
+                      Admin
+                    </div>
+                  </div>
+                </li>
+            </ul>
+        </div>
+        <div class="dashboard-content">
+            <div id="dashboard-section" class="section">
+                <div class="customer-info">
+                    <div class="label">
+                        <h2 class="text">Thông tin khách hàng</h2>
+                    </div>
+                    <div class="input-data">
+                        <div class="code-input">
+                            <p class="label-text"> Mã Lô dừa</p>
+                            <input type="text" class="input-text" placeholder="">
+                        </div>
+                        <div class="code-input">
+                            <p class="label-text"> Nhà cung cấp</p>
+                            <input type="text" class="input-text" placeholder="">
+                        </div>
+                        <div class="code-input">
+                            <p class="label-text"> Địa chỉ</p>
+                            <input type="text" class="input-text" placeholder="">
+                        </div>
+                        <div class="code-input">
+                            <p class="label-text"> Số điện thoại</p>
+                            <input type="text" class="input-text" placeholder="">
+                        </div>
+                        <div class="code-input">
+                            <p class="label-text"> Loại dừa</p>
+                            <input type="text" class="input-text" placeholder="">
+                        </div>
+                    </div>
+                    <div class="btn">
+                        <button onclick="showMessage()" class="btn-confirm">Xác nhận</button>
+                        <button class="btn-stop">Dừng</button>
+                    </div>
+                </div>
+                <div class="counting-status">
+                    <div class="label">Số lượng</div>
+                    <div class="counting">
+                        0
+                    </div>
+                </div>
+            </div>
+            <div id="user-section" class="section" style="display: none;">
+                <div class="container">
+                    <div class="login-form">
+                        <h2>Login</h2>
+                        <form action="#">
+                            <div class="input-box">
+                                <i class="fas fa-user"></i>
+                                <input type="text" placeholder="Username" required>
+                            </div>
+                            <div class="input-box">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" placeholder="Password" required>
+                            </div>
+                            <div class="remember-forgot">
+                                <label><input type="checkbox"> Remember me</label>
+                                <a href="#">Forgot password?</a>
+                            </div>
+                            <button type="submit" class="btn">Login</button>
+                            <div class="register-link">
+                                <p>Don't have an account? <a href="#">Register</a></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div id="analytics-section" class="section" style="display: none;">
+                <div class="container">
+                    <h2>Analytics Data</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Field 1</th>
+                                <th>Field 2</th>
+                            </tr>
+                        </thead>
+                        <tbody id="data-table">
+                            <!-- Data will be inserted here by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
