@@ -1,10 +1,9 @@
 #analytics-section {
     font-family: 'Arial', sans-serif;
-    background-color: #f0f2f5;
+    background-color: #E4E9F7;
     display: flex;
     justify-content: center;
-    /* align-items: center; */
-    height: 100vh;
+    height: 100%;
     margin: 0;
 }
 
@@ -46,10 +45,23 @@
 #analytics-section th, td {
     padding: 10px;
     text-align: left;
-    border-bottom: 1px solid #ddd;
+    border: 1px solid #ddd;
 }
 
 #analytics-section th {
     background-color: #4CAF50;
     color: white;
+}
+
+.lay-hang-button {
+    padding: 5px 10px;
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.lay-hang-button:hover {
+    background-color: #e68900;
 }

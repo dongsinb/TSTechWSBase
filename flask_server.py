@@ -26,8 +26,14 @@ def index():
 @app.route('/data')
 def get_data():
     todos = todos_collection.find()
-    data = [{'name': todo['name'], 'email': todo['email']} for todo in todos]
-    print("data: ", data)
+    data = []
+    for todo in todos:
+        if '_id' in todo:
+            todo['_id'] = str(todo['_id'])
+        data.append(todo)
+    print("todo: ", todo)
+    # data = [todos]
+    # print("data: ", data)
     return jsonify(data)
 
 if __name__ == '__main__':
