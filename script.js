@@ -23,7 +23,7 @@ function showSection(sectionId) {
 
 document.addEventListener('DOMContentLoaded', () => {
     const fetchData = () => {
-        fetch('http://localhost:3001/data')
+        fetch('http://127.0.0.1:5555/data')
             .then(response => response.json())
             .then(data => {
                 const tableBody = document.getElementById('data-table');
@@ -48,3 +48,4 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add event listener to the refresh button
     document.getElementById('refresh-button').addEventListener('click', fetchData);
 });
+
