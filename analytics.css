@@ -44,8 +44,9 @@
 
 #analytics-section th, td {
     padding: 10px;
-    text-align: left;
-    border: 1px solid #ddd;
+    text-align: center; /* Center align text horizontally */
+    vertical-align: middle; /* Center align text vertically */
+    border: 2px solid #ddd;
 }
 
 #analytics-section th {
@@ -64,4 +65,22 @@
 
 .lay-hang-button:hover {
     background-color: #e68900;
+}
+
+.sub-table {
+    width: 100%;
+    border: 1px solid #ddd;
+    margin-top: 10px;
+    border-collapse: collapse;
+}
+
+.sub-table th, .sub-table td {
+    border: 1px solid #ddd;
+    padding: 5px;
+    text-align: center; /* Center align text horizontally */
+    vertical-align: middle; /* Center align text vertically */
+}
+
+.sub-table th {
+    background-color: #f2f2f2;
 }
