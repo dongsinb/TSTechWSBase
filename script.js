@@ -57,15 +57,34 @@ document.addEventListener('DOMContentLoaded', function() {
     refreshButton.addEventListener('click', fetchData);
 
     function fetchData() {
-        fetch('http://127.0.0.1:5555/data')
+        fetch(`http://192.168.100.164:4000/getData`)
             .then(response => response.json())
             .then(data => {
-                renderTable(data);
+                renderTable(data['data']);
             })
             .catch(error => {
                 console.error('Error fetching data:', error);
             });
     }
+
+    function searchData(searchTerm = '') {
+        console.log("searchTerm: ", searchTerm)
+        fetch(`http://192.168.100.164:4000/getDatabyLisencePlate?lisenceplate=${searchTerm}`)
+            .then(response => response.json())
+            .then(data => {
+                console.log("data: ", data)
+                renderTable(data['data']);
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+    }
+
+    document.getElementById('search-button').addEventListener('click', function() {
+        const searchTerm = document.getElementById('search-input').value;
+        
+        searchData(searchTerm);
+    });
 
     function renderTable(data) {
         const tableHeader = document.getElementById('table-header');
@@ -98,7 +117,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     const subTable = createSubTable(item.orderslist);
                     td.appendChild(subTable);
                 } else if (header === 'id') {
-                    td.textContent = item['_id'];
+                    td.textContent = item['idx'];
+                    // td.textContent = item['_id'];
                 } else {
                     td.textContent = item[header];
                 }
@@ -111,7 +131,8 @@ document.addEventListener('DOMContentLoaded', function() {
             button.textContent = 'Lấy hàng';
             button.classList.add('lay-hang-button');
             button.addEventListener('click', function() {
-                alert('Lấy hàng cho id: ' + item._id);
+                alert('Lấy hàng cho id: ' + item.idx);
+                // alert('Lấy hàng cho id: ' + item._id);
             });
             tdButton.appendChild(button);
             tr.appendChild(tdButton);
@@ -170,7 +191,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initial fetch
     fetchData();
 });
-
 
 
 

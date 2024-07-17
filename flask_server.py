@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, render_template
+from flask import Flask, jsonify, render_template, request
 from pymongo import MongoClient
 from pymongo.server_api import ServerApi
 from flask_cors import CORS
@@ -25,6 +25,13 @@ def index():
 
 @app.route('/data')
 def get_data():
+    # search_term = request.args.get('search', '').lower()
+    # print("search_term: ", search_term)
+    # if type(search_term) is str:
+    #     todos = todos_collection({"license_plate": '80B-33333'})
+    # else:
+    #     todos = todos_collection.find()
+
     todos = todos_collection.find()
     data = []
     for todo in todos:
@@ -35,6 +42,26 @@ def get_data():
     # data = [todos]
     # print("data: ", data)
     return jsonify(data)
+
+@app.route('/search')
+def search_data():
+    search_term = request.args.get('search', '').lower()
+    print("search_term backend: ", search_term)
+    # if search_term:
+    #     todos = todos_collection({"license_plate": '80B-33333'})
+    # else:
+    #     todos = todos_collection.find()
+    todos = todos_collection.find({"license_plate": '80B-33333'})
+    data = []
+    for todo in todos:
+        if '_id' in todo:
+            todo['_id'] = str(todo['_id'])
+        data.append(todo)
+    print("todo: ", todo)
+    # data = [todos]
+    # print("data: ", data)
+    return jsonify(data)
+
 
 if __name__ == '__main__':
     app.run(debug=True, port=5555)

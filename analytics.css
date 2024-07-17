@@ -36,6 +36,51 @@
     background-color: #45a049;
 }
 
+/* Nút tìm kiếm */
+
+#analytics-section #refresh-button {
+    display: block;
+    margin: 10px auto 20px auto;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#analytics-section .search-container {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin-top: 10px;
+}
+
+#analytics-section #search-input {
+    padding: 8px;
+    margin-right: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+#analytics-section #search-button {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#analytics-section #search-button:hover {
+    background-color: #0056b3;
+}
+
+
+/* Bảng */
 #analytics-section table {
     width: 100%;
     border-collapse: collapse;

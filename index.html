@@ -127,11 +127,17 @@
                 <div class="container">
                     <h2>Analytics Data</h2>
                     <button id="refresh-button">Refresh Data</button>
-                    <table id="analytics-table">
-                        <thead>
-                            <tr id="table-header"></tr>
+                    <div class="search-container">
+                        <input type="text" id="search-input" placeholder="Nhập biển số xe...">
+                        <button id="search-button">Tìm kiếm</button>
+                    </div>
+                    <table>
+                        <thead id="table-header">
+                            <!-- Headers will be dynamically generated here -->
                         </thead>
-                        <tbody id="table-body"></tbody>
+                        <tbody id="table-body">
+                            <!-- Table rows will be dynamically generated here -->
+                        </tbody>
                     </table>
                 </div>
             </div>
